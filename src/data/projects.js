@@ -1,125 +1,225 @@
 export const projects = [
     {
         id: 1,
-        title: "Identité visuelle moderne",
+        title: "Atelier Marée",
         category: "Branding",
-        description: "Création d'une identité visuelle complète pour une startup innovante. Le projet comprend la conception du logo, la charte graphique, et l'application sur différents supports de communication.",
+        description: "Atelier Marée est une association créative qui met en lumière des artistes et des artisants locaux. Création d'une identité visuelle pour cette dernière. Le projet comprend la conception du logo et l'élaboration de sa déclinaison sur différents supports de communication.",
         image: "projects/preview/preview1.png",
         additionalImages: [
+            "projects/project1/1.png",
             "projects/project1/2.png",
+            "projects/project1/3.png",
+            "projects/project1/4.png",
+            "projects/project1/5.png",
         ],
-        tags: ["Logo", "Identité visuelle", "Charte graphique"],
+        tags: ["Logo", "Identité visuelle", "Adobe Illustrator"],
     },
     {
         id: 2,
-        title: "Site web élégan",
-        category: "Web Design",
-        description: "Design d'interface pour une plateforme e-commerce haut de gamme. Focus sur l'expérience utilisateur et la conversion, avec une approche minimaliste et sophistiquée.",
+        title: "Collaboration Superdry® X Robert Massin",
+        category: "Collab",
+        description: "Réalisation d'une collaboration entre l'artiste Robert Massin et la marque Superdry®. Création d'une série de visuels inspirés par l'univers de Massin, intégrés dans une collection capsule. Cette collaboration a été déclinée et adaptée sur divers supports, notamment des vêtements et des accessoires.",
         image: "projects/preview/preview2.png",
-        tags: ["UI/UX", "E-commerce", "Responsive"]
+        additionalImages: [
+            "projects/project2/3.png",
+            "projects/project2/4.png",
+            "projects/project2/5.png",
+            "projects/project2/6.png",
+            "projects/project2/7.png",
+        ],
+        tags: ["Design de marque", "Print", "Multi-supports"],
     },
     {
         id: 3,
-        title: "Catalogue produit premium",
-        category: "Print",
-        description: "Conception et mise en page d'un catalogue produit de 64 pages pour une marque de luxe. Travail approfondi sur la typographie et la hiérarchisation de l'information.",
+        title: "Crazy Crockery",
+        category: "Branding",
+        description: "Création d'une identité visuelle pour une marque de vaisselle artisanale. Le projet comprend la conception du logo, la charte graphique et des supports de communication variés. L'identité visuelle reflète l'authenticité et le savoir-faire artisanal de la marque.",
         image: "projects/preview/preview3.png",
-        tags: ["Print", "Mise en page", "Luxe"]
+        additionalImages: [
+            "projects/project3/1.png",
+            "projects/project3/2.png",
+            "projects/project3/3.png",
+            "projects/project3/4.png",
+            "projects/project3/5.png",
+        ],
+        tags: ["Logo", "Identité visuelle", "Adobe Illustrator"]
     },
     {
         id: 4,
-        title: "Illustrations personnalisées",
+        title: "Absolut Vodka Kids",
         category: "Illustration",
-        description: "Série d'illustrations vectorielles pour une campagne de communication digitale. Style unique mêlant formes géométriques et éléments organiques.",
+        description: "Illustrations pour un duo de bouteille de vodka. Les illustrations enfantines surpennent par leur approche décalée et ludique, apportant une touche d'humour à un produit habituellement perçu comme adulte. Le projet met en avant la créativité et l'originalité dans le design de bouteilles. Les dessins présents ont été réalisés lorsque j'avais 5 ans",
         image: "projects/preview/preview4.png",
-        tags: ["Illustration", "Digital", "Vectoriel"]
+        additionalImages: [
+            "projects/project4/1.png",
+            "projects/project4/2.png",
+            "projects/project4/3.png",
+            "projects/project4/4.png",
+        ],
+        tags: ["Dessin", "Packaging", "Décalé"]
     },
     {
         id: 5,
-        title: "Packaging innovant",
-        category: "Packaging",
-        description: "Conception d'un packaging éco-responsable pour une gamme de produits cosmétiques naturels. Approche durable avec des matériaux recyclés.",
+        title: "Lava Lamp",
+        category: "Modélisation 3D",
+        description: "Modélisation 3D d'une lampe à lave, mettant en avant les fluides et les mouvements caractéristiques de ce type d'objet. Rendu réaliste grace aux ajouts de matières et attention portée aux détails.",
         image: "projects/preview/preview5.png",
-        tags: ["Packaging", "Éco-design", "Cosmétique"]
+        additionalImages: [
+            "projects/project5/1.png",
+            "projects/project5/2.png",
+            "projects/project5/3.png",
+            "projects/project5/4.png",
+            "projects/project5/5.png",
+            "projects/project5/6.png",
+        ],
+        tags: ["3D", "Jeu de matière", "Cinema 4D"]
     },
     {
         id: 6,
-        title: "Animation publicitaire",
-        category: "Motion",
-        description: "Création d'une animation motion design pour une campagne publicitaire digitale. Storytelling visuel captivant avec des transitions fluides.",
+        title: "Les Déterminés",
+        category: "Advertising",
+        description: "Création d'une campagne publicitaire pour l'association Les Déterminés, qui accompagne les entrepreneurs issus de la diversité. Le projet comprend la conception de visuels impactants et engageants, visant à sensibiliser le public à la mission de l'association. Le slogan \"ON VOUS PROPULSE\" est utilisé au premier degré sur cette campagne de communication.",
         image: "projects/preview/preview6.png",
-        tags: ["Motion", "Publicité", "Storytelling"]
+        additionalImages: [
+            "projects/project6/1.png",
+            "projects/project6/2.png",
+            "projects/project6/3.png",
+        ],
+        tags: ["Identité visuelle", "Publicité", "LinkedIn"]
     },
     {
         id: 7,
-        title: "Animation publicitaire",
-        category: "Motion",
-        description: "Création d'une animation motion design pour une campagne publicitaire digitale. Storytelling visuel captivant avec des transitions fluides.",
+        title: "Studio Primary",
+        category: "Branding",
+        description: "Création d'un studio fictif de design graphique, Studio Primary. Le projet est basé sur des formes simples ainsi que des couleurs primaires. L'identité visuelle reflète l'approche moderne et minimaliste du studio.",
         image: "projects/preview/preview7.jpg",
-        tags: ["Motion", "Publicité", "Storytelling"]
+        additionalImages: [
+            "projects/project7/1.jpg",
+            "projects/project7/2.jpg",
+            "projects/project7/3.jpg",
+            "projects/project7/4.png",
+        ],
+        tags: ["Logo", "Identité visuelle", "Agence de graphisme"]
     },
     {
         id: 8,
-        title: "Design d'application mobile",
-        category: "Mobile",
-        description: "Conception de l'interface utilisateur pour une application mobile de gestion de tâches. Focus sur l'ergonomie et la fluidité de navigation.",
+        title: "PIO",
+        category: "Branding",
+        description: "Conception du logo d'une marque de cosmétique bio. Le projet met en avant l'utilisation de formes organiques et de couleurs douces pour créer une identité visuelle apaisante et naturelle.",
         image: "projects/preview/preview8.png",
-        tags: ["UI/UX", "Mobile", "Application"]
+        additionalImages: [
+            "projects/project8/1.png",
+            "projects/project8/3.png",
+            "projects/project8/4.png",
+            "projects/project8/5.png",
+            "projects/project8/6.png",
+        ],
+        tags: ["Logo", "Identité visuelle", "Adobe Illustrator"]
     },
     {
         id: 9,
-        title: "Affiche événementielle",
-        category: "Affiche",
-        description: "Création d'une affiche pour un festival de musique. Style graphique audacieux avec des couleurs vives et une typographie expressive.",
+        title: "La fin dans l'attente",
+        category: "Édition",
+        description: "Élaboration d'un tryptique où chaque histoire apporte un point de vue différent sur la notion d'attente dans un contexte de fin du monde. Le projet comprend la création d'illustrations et de 3 nouvelles et d'une mise en page collaborative illustré, mettant en avant l'importance de la narration visuelle.",
         image: "projects/preview/preview9.png",
-        tags: ["Affiche", "Événement", "Graphisme"]
+        additionalImages: [
+            "projects/project9/1.png",
+            "projects/project9/2.png",
+            "projects/project9/3.png",
+            "projects/project9/4.png",
+            "projects/project9/5.png",
+            "projects/project9/6.png",
+        ],
+        tags: ["Illustration", "Tryptique", "Rédaction"]
     },
     {
         id: 10,
-        title: "Identité visuelle pour ONG",
+        title: "SleepWalker Garage",
         category: "Branding",
-        description: "Développement de l'identité visuelle pour une ONG environnementale. Logo, charte graphique et supports de communication engagés.",
+        description: "Création de l'identité visuelle pour SleepWalker Garage, un garage automobile Liégois. La direction artistique souhaitait était un style vintage/rétro avec une touche moderne.",
         image: "projects/preview/preview10.png",
-        tags: ["Logo", "Identité visuelle", "Engagement"]
+        additionalImages: [
+            "projects/project10/1.png",
+            "projects/project10/2.png",
+            "projects/project10/3.png",
+        ],
+        tags: ["Logo", "Identité visuelle", "Vintage"]
     },
     {
         id: 11,
-        title: "Design de packaging alimentaire",
+        title: "Vitafresh",
         category: "Packaging",
-        description: "Conception d'un packaging pour une nouvelle gamme de snacks bio. Design attrayant et éco-responsable.",
+        description: "Conception d'un packaging et d'un logo pour une nouvelle gamme de jus de fruit préssé à froid. Design frais et coloré, mettant en avant les ingrédients naturels.",
         image: "projects/preview/preview11.png",
-        tags: ["Packaging", "Alimentaire", "Bio"]
+        additionalImages: [
+            "projects/project11/1.png",
+            "projects/project11/2.png",
+            "projects/project11/3.png",
+            "projects/project11/4.png",
+            "projects/project11/5.png",
+        ],
+        tags: ["Packaging", "Logo", "Bio"]
     },
     {
         id: 12,
-        title: "Site web portfolio",
-        category: "Web Design",
-        description: "Refonte complète de mon portfolio en ligne. Mise en avant de mes projets avec une navigation intuitive et un design épuré.",
+        title: "COKIYET",
+        category: "Branding",
+        description: "Réalisation d'un logo pour un bar à pâtes artisanal. Le design met en avant l'authenticité et la qualité des produits, avec une typographie à base de coquillettes.",
         image: "projects/preview/preview12.png",
-        tags: ["Web Design", "Portfolio", "Responsive"]
+        additionalImages: [
+            "projects/project12/1.png",
+            "projects/project12/2.png",
+            "projects/project12/3.png",
+        ],
+        tags: ["Logo", "Identité visuelle", "Adobe Illustrator"]
     },
     {
         id: 13,
-        title: "Campagne de communication digitale",
-        category: "Digital",
-        description: "Création d'une campagne de communication pour le lancement d'un nouveau produit. Comprend des bannières web, des posts pour les réseaux sociaux et des newsletters.",
+        title: "Shooting sans retouche",
+        category: "Photographie",
+        description: "Captures réalisées en groupe dans le cadre d'un projet de cours. Le décor a été créé de toute pièce dans mon garage. L'objectif était de mettre en avant les objets/ vêtements de seconde main. La seule contrainte était de ne pas retoucher les photos. Nous devions donc uniquement jouer sur la lumière et les angles de prise de vue.",
         image: "projects/preview/preview13.png",
-        tags: ["Digital", "Communication", "Réseaux sociaux"]
+        additionalImages: [
+            "projects/project13/1.png",
+            "projects/project13/2.png",
+            "projects/project13/3.png",
+            "projects/project13/4.png",
+        ],
+        tags: ["Boîtier Sony", "Seconde main", "Jeu de lumière"]
     },
     {
         id: 14,
-        title: "Refonte de marque",
-        category: "Branding",
-        description: "Projet de rebranding complet pour une entreprise établie. Nouveau logo, charte graphique et supports de communication.",
+        title: "Expédition Haltéro-Coréenne",
+        category: "Branding 360°",
+        description: "Réalisation d'une campagne de communication 360° pour un événement fictif, l'Expédition Haltéro-Coréenne. Le projet comprend la création d'une identité visuelle complète, incluant le logo, les affiches, les bannières et les supports numériques. L'objectif est de promouvoir l'événement de manière cohérente et impactante tout en gardant l'aspect culturel du lieu.",
         image: "projects/preview/preview14.png",
-        tags: ["Rebranding", "Identité visuelle", "Stratégie"]
+        additionalImages: [
+            "projects/project14/1.png",
+            "projects/project14/2.png",
+            "projects/project14/3.png",
+            "projects/project14/4.png",
+            "projects/project14/5.png",
+            "projects/project14/6.png",
+            "projects/project14/7.png",
+        ],
+        tags: ["Branding", "Identité visuelle", "Campagne de communication"]
     },
     {
         id: 15,
-        title: "Illustrations pour livre jeunesse",
-        category: "Illustration",
-        description: "Création d'illustrations pour un livre jeunesse. Style ludique et coloré, adapté à un jeune public.",
+        title: "Programme Conquête Astrale",
+        category: "Branding",
+        description: "Création d'une identité visuelle complète pour un programme fictif d'exploration spatiale. Le projet comprend le logo, les affiches, et les supports numériques, avec un accent sur l'innovation et l'aventure.",
         image: "projects/preview/preview15.png",
-        tags: ["Illustration", "Livre jeunesse", "Ludique"]
+        additionalImages: [
+            "projects/project15/1.png",
+            "projects/project15/2.png",
+            "projects/project15/3.png",
+            "projects/project15/4.png",
+            "projects/project15/5.png",
+            "projects/project15/6.png",
+            "projects/project15/7.png",
+            "projects/project15/8.png",
+        ],
+        tags: ["Branding", "Identité visuelle", "Exploration spatiale"]
     }
 ];
