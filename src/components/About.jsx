@@ -61,7 +61,7 @@ const About = () => {
                             {/* Photo de profil */}
                             <div className="w-64 sm:w-80 h-80 sm:h-96 bg-gradient-to-br from-warm-brown-200 to-beige-200 rounded-2xl mx-auto relative overflow-hidden shadow-2xl">
                                 <img 
-                                    src="/pp.jpg" 
+                                    src="pp.jpg" 
                                     alt="Lucie - Graphiste & Designer" 
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
