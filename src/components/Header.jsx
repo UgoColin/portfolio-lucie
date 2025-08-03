@@ -68,19 +68,19 @@ const Header = () => {
                             <div className="flex flex-col space-y-4">
                                 <button 
                                     onClick={() => scrollToSection('accueil')} 
-                                    className="text-warm-brown-800 hover:text-warm-brown-600 transition-colors duration-300 text-left py-2"
+                                    className="text-warm-brown-800 hover:text-warm-brown-600 hover:bg-warm-brown-100 transition-all duration-300 text-left py-2 px-4 rounded-lg"
                                 >
                                     Accueil
                                 </button>
                                 <button 
                                     onClick={() => scrollToSection('a-propos')} 
-                                    className="text-warm-brown-800 hover:text-warm-brown-600 transition-colors duration-300 text-left py-2"
+                                    className="text-warm-brown-800 hover:text-warm-brown-600 hover:bg-warm-brown-100 transition-all duration-300 text-left py-2 px-4 rounded-lg"
                                 >
                                     À propos
                                 </button>
                                 <button 
                                     onClick={() => scrollToSection('portfolio')} 
-                                    className="text-warm-brown-800 hover:text-warm-brown-600 transition-colors duration-300 text-left py-2"
+                                    className="text-warm-brown-800 hover:text-warm-brown-600 hover:bg-warm-brown-100 transition-all duration-300 text-left py-2 px-4 rounded-lg"
                                 >
                                     Portfolio
                                 </button>
