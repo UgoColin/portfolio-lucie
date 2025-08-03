@@ -71,10 +71,25 @@ body::before {
   font-weight: 500;
   transition: color 0.3s ease;
   cursor: pointer;
+  background: transparent !important; /* Force transparent */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .nav-link:hover {
   color: var(--warm-brown-800);
+  background: var(--warm-brown-100) !important; /* Force le hover personnalisé */
+}
+
+/* Styles spécifiques pour les boutons de modal */
+.modal-control {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal-control:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Animations personnalisées */
@@ -453,10 +468,6 @@ button:focus-visible {
 
   a:hover {
     color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
   }
 }
 
