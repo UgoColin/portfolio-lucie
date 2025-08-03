@@ -25,11 +25,6 @@ export const carouselImages = [
         alt: "Réalisation 5"
     },
     {
-        id: 6,
-        src: "projects/carousel/6.png",
-        alt: "Réalisation 6"
-    },
-    {
         id: 7,
         src: "projects/carousel/7.jpg",
         alt: "Réalisation 7"
@@ -55,11 +50,6 @@ export const carouselImages = [
         alt: "Réalisation 11"
     },
     {
-        id: 12,
-        src: "projects/carousel/12.JPG",
-        alt: "Réalisation 12"
-    },
-    {
         id: 13,
         src: "projects/carousel/13.JPG",
         alt: "Réalisation 13"
@@ -68,11 +58,6 @@ export const carouselImages = [
         id: 14,
         src: "projects/carousel/14.JPG",
         alt: "Réalisation 14"
-    },
-    {
-        id: 15,
-        src: "projects/carousel/15.png",
-        alt: "Réalisation 15"
     },
     {
         id: 16,
