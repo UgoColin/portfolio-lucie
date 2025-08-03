@@ -203,6 +203,7 @@ const ProjectRow = ({ project, index, isReversed, onImageClick }) => {
 
 const ProjectModal = ({ project, onClose }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [imageLoading, setImageLoading] = useState(true);
     
     // Créer le tableau de toutes les images (preview + additionnelles)
     const allImages = [project.image, ...(project.additionalImages || [])];
@@ -211,14 +212,35 @@ const ProjectModal = ({ project, onClose }) => {
     // Navigation vers l'image précédente
     const goToPrevious = (e) => {
         e.stopPropagation();
+        setImageLoading(true);
         setCurrentImageIndex((prev) => (prev === 0 ? totalImages - 1 : prev - 1));
     };
 
     // Navigation vers l'image suivante
     const goToNext = (e) => {
         e.stopPropagation();
+        setImageLoading(true);
         setCurrentImageIndex((prev) => (prev === totalImages - 1 ? 0 : prev + 1));
     };
+
+    // Gérer le chargement de l'image
+    const handleImageLoad = () => {
+        setImageLoading(false);
+    };
+
+    const handleImageError = () => {
+        setImageLoading(false);
+    };
+
+    // Reset loading state when modal opens
+    useEffect(() => {
+        setImageLoading(true);
+    }, [project]);
+
+    // Reset loading state when image changes
+    useEffect(() => {
+        setImageLoading(true);
+    }, [currentImageIndex]);
 
     // Navigation avec les touches du clavier
     useEffect(() => {
@@ -237,84 +259,93 @@ const ProjectModal = ({ project, onClose }) => {
     const currentImage = allImages[currentImageIndex];
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
             {/* Backdrop - Clique pour fermer */}
             <div
                 className="absolute inset-0 bg-black/90 cursor-pointer"
                 onClick={onClose}
             ></div>
 
-            {/* Conteneur du diaporama */}
-            <div className="relative max-w-[80vw] max-h-[80vh] animate-fade-in-up">
-                {/* Image actuelle */}
-                <div className="relative">
-                    {currentImage && currentImage !== "/projects/placeholder.jpg" ? (
-                        <img
-                            src={currentImage}
-                            alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                            className="max-w-[80vw] max-h-[80vh] object-contain"
-                            onError={(e) => {
-                                e.target.style.display = 'none';
-                                e.target.nextSibling.style.display = 'flex';
-                            }}
-                        />
-                    ) : null}
-                    
-                    {/* Placeholder si image ne charge pas */}
-                    <div className={`flex items-center justify-center w-96 h-96 text-center text-white/70 ${currentImage && currentImage !== "/projects/placeholder.jpg" ? 'hidden' : ''}`}>
-                        <div>
-                            <svg className="w-24 h-24 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                            </svg>
-                            <p className="opacity-75">Image du projet</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Navigation - Flèches (seulement si plus d'une image) */}
-                {totalImages > 1 && (
-                    <>
-                        {/* Flèche gauche */}
-                        <button
-                            onClick={goToPrevious}
-                            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
-                            aria-label="Image précédente"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-
-                        {/* Flèche droite */}
-                        <button
-                            onClick={goToNext}
-                            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
-                            aria-label="Image suivante"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </>
-                )}
-
-                {/* Compteur d'images */}
-                {totalImages > 1 && (
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm">
-                        {currentImageIndex + 1} / {totalImages}
-                    </div>
-                )}
-
-                {/* Bouton fermer */}
+            {/* Conteneur principal avec contrôles externes */}
+            <div className="relative w-full h-full max-w-6xl max-h-full flex flex-col items-center justify-center">
+                {/* Bouton fermer - En haut à droite de la zone */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+                    className="modal-control absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm z-10 shadow-lg"
                     aria-label="Fermer"
                 >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+
+                {/* Container pour l'image et les flèches latérales */}
+                <div className="flex items-center justify-center w-full flex-1 gap-2 sm:gap-4">
+                    {/* Flèche gauche - à côté de l'image */}
+                    {totalImages > 1 && (
+                        <button
+                            onClick={goToPrevious}
+                            className="w-10 h-10 sm:w-12 sm:h-12 bg-black/20 hover:bg-black/40 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm z-10 border border-black/30 flex-shrink-0 shadow-lg"
+                            aria-label="Image précédente"
+                        >
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    )}
+
+                    {/* Image actuelle */}
+                    <div className="relative flex items-center justify-center max-w-full max-h-full">
+                        {/* Indicateur de chargement */}
+                        {imageLoading && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-gray-800/20 backdrop-blur-sm rounded-lg z-20">
+                                <div className="flex flex-col items-center">
+                                    {/* Spinner de chargement */}
+                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white/70"></div>
+                                    <p className="text-white/70 text-sm mt-3">Chargement...</p>
+                                </div>
+                            </div>
+                        )}
+
+                        {currentImage && currentImage !== "/projects/placeholder.jpg" ? (
+                            <img
+                                src={currentImage}
+                                alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                                className={`max-w-[60vw] sm:max-w-[70vw] max-h-[60vh] sm:max-h-[70vh] object-contain transition-opacity duration-300 ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
+                                onLoad={handleImageLoad}
+                                onError={handleImageError}
+                            />
+                        ) : null}
+                        
+                        {/* Placeholder si image ne charge pas */}
+                        <div className={`flex items-center justify-center w-48 h-48 sm:w-96 sm:h-96 text-center text-white/70 ${currentImage && currentImage !== "/projects/placeholder.jpg" ? 'hidden' : ''}`}>
+                            <div>
+                                <svg className="w-12 h-12 sm:w-24 sm:h-24 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                                </svg>
+                                <p className="opacity-75 text-sm sm:text-base">Image du projet</p>
+                            </div>
+                        </div>
+                    </div>                    {/* Flèche droite - à côté de l'image */}
+                    {totalImages > 1 && (
+                        <button
+                            onClick={goToNext}
+                            className="w-10 h-10 sm:w-12 sm:h-12 bg-black/20 hover:bg-black/40 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm z-10 border border-black/30 flex-shrink-0 shadow-lg"
+                            aria-label="Image suivante"
+                        >
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    )}
+                </div>
+
+                {/* Compteur d'images - en bas de la zone */}
+                {totalImages > 1 && (
+                    <div className="mt-3 sm:mt-4 bg-black/20 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm backdrop-blur-sm border border-black/30 shadow-lg">
+                        {currentImageIndex + 1} / {totalImages}
+                    </div>
+                )}
             </div>
         </div>
     );
