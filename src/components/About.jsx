@@ -60,16 +60,13 @@ const About = () => {
                         <div className="relative order-1 md:order-2">
                             {/* Photo de profil */}
                             <div className="w-64 sm:w-80 h-80 sm:h-96 bg-gradient-to-br from-warm-brown-200 to-beige-200 rounded-2xl mx-auto relative overflow-hidden shadow-2xl">
-                                <img 
-                                    src="pp.jpg" 
-                                    alt="Lucie - Graphiste & Designer" 
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        // Si l'image ne se charge pas, afficher le placeholder
-                                        e.target.style.display = 'none';
-                                        e.target.nextSibling.style.display = 'flex';
-                                    }}
-                                />
+                                <div 
+                                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                                    style={{ backgroundImage: 'url("pp.jpg")' }}
+                                    role="img"
+                                    aria-label="Lucie - Graphiste & Designer"
+                                >
+                                </div>
                                 {/* Fallback placeholder */}
                                 <div className="absolute inset-0 hidden items-center justify-center">
                                     <div className="text-center text-warm-brown-600">

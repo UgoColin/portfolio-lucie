@@ -101,12 +101,13 @@ const Carousel = () => {
                             background: 'linear-gradient(135deg, var(--beige-100) 0%, var(--cream-200) 100%)'
                         }}
                     >
-                        <img 
-                            src={image.src}
-                            alt={image.alt}
-                            className="w-full h-full object-cover pointer-events-none"
-                            draggable={false}
-                        />
+                        <div 
+                            className="w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
+                            style={{ backgroundImage: `url("${image.src}")` }}
+                            role="img"
+                            aria-label={image.alt}
+                        >
+                        </div>
                     </div>
                 ))}
             </div>

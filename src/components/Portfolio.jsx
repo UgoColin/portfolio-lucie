@@ -133,23 +133,21 @@ const ProjectRow = ({ project, index, isReversed, onImageClick }) => {
                     {/* Image du projet ou placeholder */}
                     <div className="aspect-[4/3] bg-gradient-to-br from-warm-brown-100 to-beige-200 flex items-center justify-center overflow-hidden">
                         {project.image && project.image !== "/projects/placeholder.jpg" ? (
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                    // Si l'image ne se charge pas, afficher le placeholder
-                                    e.target.style.display = 'none';
-                                    e.target.nextSibling.style.display = 'block';
-                                }}
-                            />
-                        ) : null}
-                        <div className={`text-center text-warm-brown-500 ${project.image && project.image !== "/projects/placeholder.jpg" ? 'hidden' : ''}`}>
-                            <svg className="w-20 h-20 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                            </svg>
-                            <p className="text-sm opacity-75">Image du projet</p>
-                        </div>
+                            <div
+                                className="w-full h-full bg-cover bg-center bg-no-repeat"
+                                style={{ backgroundImage: `url("${project.image}")` }}
+                                role="img"
+                                aria-label={project.title}
+                            >
+                            </div>
+                        ) : (
+                            <div className="text-center text-warm-brown-500">
+                                <svg className="w-20 h-20 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                                </svg>
+                                <p className="opacity-75">Image du projet</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
